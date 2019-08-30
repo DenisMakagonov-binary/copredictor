@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/copredictor.iml" filepath="$PROJECT_DIR$/.idea/copredictor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../ga-bq/.idea/ga-bq.iml" filepath="$PROJECT_DIR$/../ga-bq/.idea/ga-bq.iml" />
     </modules>
   </component>
 </project>

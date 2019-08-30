@@ -4,12 +4,24 @@ import casv_predictor as cp
 
 
 # set model parameters
-arpu = 10.0
-cohort_r = 100
-activation_rates = np.array([0.26, 0.17, 0.12, 0.03, 0.01])
-survival_rates = np.array([1.00,0.88,0.73,0.62,0.47,0.33,0.21,0.12,0.07,0.01])
+# earpu - expected average revenue per user (in a  day)
+earpu = 14.0
+# cohort_r  - size of cohort to make prediction for.
+cohort_r = 163
+activation_rates = np.array([[0.2064],
+[0.0379],[0.027],[0.0211],[0.0171],[0.0127],[0.0128],[0.0107],[0.0089],[0.0083],
+[0.0064],[0.0065],[0.0053],[0.0051],[0.0057],[0.0032],[0.0036],[0.0031],[0.0035],
+[0.0034],[0.0033],[0.0023],[0.0024],[0.0021],[0.0027],[0.002],[0.0018],[0.0025],
+[0.0017],[0.0012],[0.0013]
+])
+
+survival_rates = np.array([1,	0.6861,	0.5362,	0.4593,	0.412,	0.3713,	0.3486,	0.341,	0.3148,	0.2934,	0.286,	0.2686,	0.2682
+,	0.2701,	0.2659,	0.2489,	0.235,	0.2296,	0.2239,	0.2179,	0.2219,	0.2235,	0.2128,	0.2055,	0.1998
+,	0.1982,	0.1879,	0.1924,	0.1926,	0.1898,	0.1827,	0.1763,	0.1775,	0.1785,	0.1761,	0.1706,	0.1634
+,	0.1604,	0.1622,	0.1531,	0.16,	0.1605,	0.1559,	0.1608,	0.1535,	0.1552,	0.1506,	0.1491,	0.1508
+,	0.1547,	0.15])
 
 
-CPs = cp.get_prediction_by(cohort = cohort_r,arpu = arpu,ARs = activation_rates, SRs = survival_rates)
+CPs = cp.get_prediction_by(cohort = cohort_r,arpu = earpu,ARs = activation_rates, SRs = survival_rates)
 
 print(CPs)
